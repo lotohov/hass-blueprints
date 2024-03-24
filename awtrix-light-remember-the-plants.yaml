@@ -104,6 +104,9 @@ trigger:
   - platform: state
     entity_id: sensor.awtrix_ed5dc8_current_app
     from: 'unavailable'
+  - platform: time_pattern
+    minutes: /60
+    id: time
 action:
   repeat:
     for_each: "{{ devices }}"
