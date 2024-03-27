@@ -40,13 +40,13 @@ action:
       - condition: template
         value_template: "{{ playing_state != \"playing\"  }}"
     then:
-      - service: awtrix.{{awtrix_device_name}}push_app_data
+      - service: awtrix.{{awtrix_device_name}}_push_app_data
         data:
           device: "{{awtrix_device_name}}"
           name: sonos
           data: {}
     else:
-      - service: awtrix.{{awtrix_device_name}}push_app_data
+      - service: awtrix.{{awtrix_device_name}}_push_app_data
         data:
           device: "{{awtrix_device_name}}"
           name: sonos
